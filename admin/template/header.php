@@ -9,7 +9,7 @@
     </a>
   </div>
   <div class="user-menu">
-    <a href="/admin/profile.php" title="Profil utilisateur">
+    <a href="/admin/profile.php" title="Profil">
       <i class='bx bx-user'></i>
     </a>
   </div>

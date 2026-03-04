@@ -8,6 +8,11 @@
   color: black;
 }
 
+body {
+  background-color: #e3e3e3;
+  height: 100vh;
+}
+
 /* Navigation */
 .nav {
   display: flex;
@@ -16,6 +21,7 @@
   padding: 1rem 2rem;
   background-color: #fff;
   box-shadow: 0 3px 15px hsla(0, 0%, 0%, 0.3);
+  z-index: 20;
 }
 
 /* Brand/Logo */
@@ -65,6 +71,66 @@
 
 .user-menu i {
   font-size: 2.5rem;
+}
+
+/* Login */
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 15px hsla(0, 0%, 0%, 0.3);
+  gap: 16px;
+  width: 300px;
+}
+
+h2 {
+  margin: 0;
+}
+
+label {
+  font-size: 14px;
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.errormessage {
+  color: red;
+}
+
+.btn {
+  padding: 10px;
+  background: #0e86d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #055c9d;
 }
 
 @media (max-width: 768px) {
