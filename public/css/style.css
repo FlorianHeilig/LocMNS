@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #e3e3e3;
+  background-color: #ffffff;
   height: 100vh;
 }
 
@@ -20,14 +20,13 @@ body {
   align-items: center;
   padding: 1rem 2rem;
   background-color: #fff;
-  box-shadow: 0 3px 15px hsla(0, 0%, 0%, 0.3);
-  z-index: 20;
+  box-shadow: 0 3px 15px hsla(0, 0%, 0%, 0.7);
 }
 
 .list {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 40px;
 }
 
 li {
@@ -36,6 +35,11 @@ li {
 
 li a {
   font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
 }
 
 .dropdown-toggle:hover,
@@ -83,6 +87,10 @@ li a {
   box-sizing: border-box;
 }
 
+.category_list a:hover {
+  color: #055c9d;
+}
+
 .category_picture {
   display: flex;
   align-items: center;
@@ -103,6 +111,11 @@ li a {
   display: flex;
 }
 
+.burger-menu-icon {
+  display: none;
+  font-size: 2.5rem;
+}
+
 /* Brand/Logo */
 .brand a {
   display: flex;
@@ -110,7 +123,7 @@ li a {
   gap: 0.75rem;
   text-decoration: none;
   color: #333;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 900;
   transition: opacity 0.3s ease;
 }
@@ -203,18 +216,21 @@ a {
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   background: #0e86d4;
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
   font-weight: 800;
 }
 
 .btn a {
   color: #ffffff;
+  font-size: 12px;
   text-decoration: none;
 }
 
@@ -226,17 +242,113 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 4% 7%;
+  padding: 5% 20%;
   height: 100%;
+  margin-bottom: 100px;
 }
 
-.container {
-  height: 100%;
+main h1 {
+  padding: 0;
+  color: #055c9d;
+  font-size: 96px;
+  text-align: center;
+}
+
+.category_suggestion {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
   width: 100%;
 }
 
-@media (max-width: 768px) {
+.suggestion_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.suggestion_card a {
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
+
+.suggestion_card div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(14, 134, 212, 0.34);
+  padding: 25px;
+  border-radius: 15px;
+  width: 250px;
+  height: 150px;
+}
+
+.suggestion_card img {
+  height: 125px;
+  width: 125px;
+}
+
+.suggestion_card a:hover {
+  color: #055c9d;
+}
+
+.suggestion_card div:hover {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.product-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.product-section-header h2 {
+  font-size: 1.5rem;
+  color: #055c9d;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.product-card img {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
+}
+
+.product-card p {
+  margin-top: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  /*Navigation*/
+
   .nav {
     padding: 1rem;
   }
@@ -248,5 +360,77 @@ main {
   .brand img {
     width: 50px;
     height: 50px;
+  }
+
+  .burger-menu-icon {
+    display: block;
+  }
+
+  .burger-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .burger-menu.open {
+    display: block;
+    left: 0;
+  }
+
+  .user-menu i {
+    font-size: 2rem;
+  }
+
+  .dropdown-toggle {
+    display: none;
+  }
+
+  /*Main*/
+
+  main h1 {
+    font-size: 42px;
+  }
+
+  .suggestion_card a {
+  }
+
+  .suggestion_card div {
+    width: 200px;
+    height: 100px;
+  }
+
+  .suggestion_card img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .btn {
+    padding: 5px;
+  }
+
+  .btn a {
+    font-size: 9px;
+  }
+
+  .product-list {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-card {
+    flex: 0 0 150px;
+    scroll-snap-align: start;
+  }
+
+  .product-section-header h2 {
+    font-size: 15px;
   }
 }
