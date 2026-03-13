@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelectorAll(".dropdown.open")
       .forEach((d) => d.classList.remove("open"));
     document
-      .querySelectorAll(".arrow.rotated")
+      .querySelectorAll(".bx bx-chevron-right.rotated")
       .forEach((a) => a.classList.remove("rotated"));
     document
       .querySelectorAll(".dropdown-toggle.active")
@@ -36,5 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const icon = burgerIcon.querySelector("i");
     icon.classList.toggle("bx-menu");
     icon.classList.toggle("bx-x");
+  });
+
+  document.querySelectorAll(".filter-group").forEach((group) => {
+    group.querySelectorAll('input[type="radio"]').forEach((input) => {
+      input.addEventListener("change", () => {
+        const label = group.querySelector("strong");
+        const span = input.closest(".radio-btn").querySelector("span");
+
+        const img = span.querySelector("img");
+        label.textContent = img ? img.alt : span.textContent.trim();
+      });
+    });
   });
 });
